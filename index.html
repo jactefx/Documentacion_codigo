@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Guía de Documentación - Corredor </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            margin-top: 1.5em;
+        }
+        .example {
+            background-color: #f8f9fa;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+        .diagram {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .contact-info {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guía de Documentación - Corredor Minero Las Bambas</h1>
+    
+    <div class="section">
+        <h2>1. Estructura General de Nombres de Archivo</h2>
+        <div class="section">
+            
+            <div class="diagram-container">
+                <svg viewBox="0 0 1000 300" class="diagram-svg">
+                    <!-- Contenedor principal -->
+                    <rect x="10" y="10" width="980" height="280" fill="#f8f9fa" stroke="#ccc" stroke-width="2"/>
+                    
+                    <!-- Cajas de componentes -->
+                    <g id="components">
+                        <!-- Fecha -->
+                        <rect x="50" y="40" width="120" height="60" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+                        <text x="110" y="65" text-anchor="middle" font-weight="bold">FECHA</text>
+                        <text x="110" y="85" text-anchor="middle" font-size="12">AAMMDD</text>
+                        
+                        <!-- Iniciales -->
+                        <rect x="200" y="40" width="100" height="60" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+                        <text x="250" y="65" text-anchor="middle" font-weight="bold">IN</text>
+                        <text x="250" y="85" text-anchor="middle" font-size="12">Iniciales</text>
+                        
+                        <!-- Guion -->
+                        <rect x="330" y="40" width="40" height="60" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+                        <text x="350" y="75" text-anchor="middle" font-weight="bold">_</text>
+                        
+                        <!-- Actividad -->
+                        <rect x="400" y="40" width="120" height="60" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+                        <text x="460" y="65" text-anchor="middle" font-weight="bold">ACT</text>
+                        <text x="460" y="85" text-anchor="middle" font-size="12">Actividad</text>
+                        
+                        <!-- Guion -->
+                        <rect x="550" y="40" width="40" height="60" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+                        <text x="570" y="75" text-anchor="middle" font-weight="bold">_</text>
+                        
+                        <!-- Referencia -->
+                        <rect x="620" y="40" width="120" height="60" fill="#e1f5fe" stroke="#03a9f4" stroke-width="2"/>
+                        <text x="680" y="65" text-anchor="middle" font-weight="bold">REF</text>
+                        <text x="680" y="85" text-anchor="middle" font-size="12">Referencia</text>
+                        
+                        <!-- Guion -->
+                        <rect x="770" y="40" width="40" height="60" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+                        <text x="790" y="75" text-anchor="middle" font-weight="bold">_</text>
+                        
+                        <!-- Zona -->
+                        <rect x="840" y="40" width="100" height="60" fill="#fce4ec" stroke="#e91e63" stroke-width="2"/>
+                        <text x="890" y="65" text-anchor="middle" font-weight="bold">ZONA</text>
+                        <text x="890" y="85" text-anchor="middle" font-size="12">Ubicación</text>
+                    </g>
+                    
+                    <!-- Ejemplo -->
+                    <g id="example">
+                        <rect x="50" y="160" width="890" height="60" fill="#f5f5f5" stroke="#9e9e9e" stroke-width="2"/>
+                        <text x="495" y="190" text-anchor="middle" font-family="monospace" font-size="20">240915RG_MON_BM100_CUSCO.jpg</text>
+                    </g>
+                    
+                    <!-- Flechas y líneas explicativas -->
+                    <g id="arrows" stroke="#666" stroke-width="2" fill="none">
+                        <path d="M110 100 L110 160"/>
+                        <path d="M250 100 L250 160"/>
+                        <path d="M350 100 L350 160"/>
+                        <path d="M460 100 L460 160"/>
+                        <path d="M570 100 L570 160"/>
+                        <path d="M680 100 L680 160"/>
+                        <path d="M790 100 L790 160"/>
+                        <path d="M890 100 L890 160"/>
+                    </g>
+                    
+                    <!-- Leyenda -->
+                    <g id="legend">
+                        <text x="50" y="260" font-size="12">
+                            <tspan x="50" dy="0">Fecha: 15/09/2024</tspan>
+                            <tspan x="250" dy="0">Iniciales: RG (Roberto Gutiérrez)</tspan>
+                            <tspan x="500" dy="0">Actividad: MON (Monumentación)</tspan>
+                            <tspan x="750" dy="0">Zona: CUSCO</tspan>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <p><strong>Formato:</strong> AAMMDD + IN + "_" + ACT + "_" + REF + "_" + ZONA.[EXTENSION]</p>
+            <ul>
+                <li><strong>AAMMDD:</strong> Fecha en formato año, mes, día</li>
+                <li><strong>IN:</strong> Iniciales del nombre y primer apellido del ejecutor</li>
+                <li><strong>ACT:</strong> Código de actividad</li>
+                <li><strong>REF:</strong> Punto(s) de referencia</li>
+                <li><strong>ZONA:</strong> Ubicación geográfica</li>
+            </ul>
+
+    </div>
+
+    <div class="section">
+        <h2>2. Códigos de Actividad</h2>
+        <table>
+            <tr>
+                <th>Código</th>
+                <th>Actividad</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td>NIV</td>
+                <td>Nivelación</td>
+                <td>Trabajos de nivelación topográfica</td>
+            </tr>
+            <tr>
+                <td>MON</td>
+                <td>Monumentación</td>
+                <td>Monumentación de hitos</td>
+            </tr>
+            <tr>
+                <td>POL</td>
+                <td>Poligonal</td>
+                <td>Levantamiento de poligonales</td>
+            </tr>
+            <tr>
+                <td>GEO</td>
+                <td>Geodesia</td>
+                <td>Trabajos geodésicos</td>
+            </tr>
+            <tr>
+                <td>DRO</td>
+                <td>Vuelo drone</td>
+                <td>Levantamientos con drone</td>
+            </tr>
+            <tr>
+                <td>LEV</td>
+                <td>Levantamiento</td>
+                <td>Levantamientos topográficos</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>3. Ejemplos por Tipo de Actividad</h2>
+
+        <h3>3.1 Nivelación (NIV)</h3>
+        <div class="example">
+            <p><strong>Archivos requeridos:</strong> Excel con plantilla + foto de libreta de campo</p>
+            <p><strong>Ejemplo 1:</strong> <code>240915JQ_NIV_BM100@BM200_CUSCO.xlsx</code></p>
+            <ul>
+                <li>José Quispe realizó nivelación entre BM100 y BM200</li>
+                <li>Fecha: 15/09/2024</li>
+            </ul>
+            <p><strong>Ejemplo 2:</strong> <code>240916RM_NIV_BM200@BM300_CUSCO.xlsx</code></p>
+            <ul>
+                <li>Roberto Mamani realizó nivelación entre BM200 y BM300</li>
+                <li>Fecha: 16/09/2024</li>
+            </ul>
+            <p><strong>Ejemplo 3:</strong> <code>240917AL_NIV_BM300@BM400_CUSCO.xlsx</code></p>
+            <ul>
+                <li>Ana López realizó nivelación entre BM300 y BM400</li>
+                <li>Fecha: 17/09/2024</li>
+            </ul>
+        </div>
+
+        <h3>3.2 Monumentación (MON)</h3>
+        <div class="example">
+            <p><strong>Archivos requeridos:</strong> KML/KMZ o CSV con coordenadas</p>
+            <p><strong>Ejemplo 1:</strong> <code>240920RG_MON_BM100_CUSCO.kml</code></p>
+            <ul>
+                <li>René Gutiérrez monumentó el punto BM100</li>
+                <li>Fecha: 20/09/2024</li>
+            </ul>
+            <p><strong>Ejemplo 2:</strong> <code>240921MP_MON_BM200_CUSCO.kml</code></p>
+            <ul>
+                <li>María Pérez monumentó el punto BM200</li>
+                <li>Fecha: 21/09/2024</li>
+            </ul>
+            <p><strong>Ejemplo 3:</strong> <code>240922JC_MON_BM300_CUSCO.kml</code></p>
+            <ul>
+                <li>Juan Castro monumentó el punto BM300</li>
+                <li>Fecha: 22/09/2024</li>
+            </ul>
+        </div>
+
+        <h3>3.3 Geodesia (GEO)</h3>
+        <div class="example">
+            <p><strong>Archivos requeridos:</strong> ZIP conteniendo JPG y archivos RINEX</p>
+            <p><strong>Ejemplo 1:</strong> <code>240925CS_GEO_BASE01_CUSCO.zip</code></p>
+            <ul>
+                <li>Carlos Soto realizó medición geodésica en BASE01</li>
+                <li>Fecha: 25/09/2024</li>
+            </ul>
+            <p><strong>Ejemplo 2:</strong> <code>240926LR_GEO_BASE02_CUSCO.zip</code></p>
+            <ul>
+                <li>Luis Ramírez realizó medición geodésica en BASE02</li>
+                <li>Fecha: 26/09/2024</li>
+            </ul>
+            <p><strong>Ejemplo 3:</strong> <code>240927DM_GEO_BASE03_CUSCO.zip</code></p>
+            <ul>
+                <li>Diana Mendoza realizó medición geodésica en BASE03</li>
+                <li>Fecha: 27/09/2024</li>
+            </ul>
+        </div>
+
+        <h3>3.4 Vuelo con Drone (DRO)</h3>
+        <div class="example">
+            <p><strong>Archivos requeridos:</strong> Archivos de vuelo según formato establecido</p>
+            <p><strong>Ejemplo 1:</strong> <code>240930VP_DRO_KM10@KM15_CUSCO.zip</code></p>
+            <ul>
+                <li>Víctor Prado realizó vuelo del KM10 al KM15</li>
+                <li>Fecha: 30/09/2024</li>
+            </ul>
+            <p><strong>Ejemplo 2:</strong> <code>241001RA_DRO_KM15@KM20_CUSCO.zip</code></p>
+            <ul>
+                <li>Rosa Alegría realizó vuelo del KM15 al KM20</li>
+                <li>Fecha: 01/10/2024</li>
+            </ul>
+            <p><strong>Ejemplo 3:</strong> <code>241002FT_DRO_KM20@KM25_CUSCO.zip</code></p>
+            <ul>
+                <li>Fernando Torres realizó vuelo del KM20 al KM25</li>
+                <li>Fecha: 02/10/2024</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Procedimiento de Entrega</h2>
+        <div class="contact-info">
+            <h3>4.1 Envío por Correo</h3>
+            <p>Enviar la documentación a:</p>
+            <ul>
+                <li>jacson.enrriquez@cumbra.com.pe</li>
+                <li>Reyzaguirre@cumbra.com.pe</li>
+            </ul>
+
+            <h3>4.2 Confirmación por WhatsApp</h3>
+            <ul>
+                <li>Enviar captura de pantalla del correo al grupo correspondiente</li>                
+            </ul>
+        </div>
+    </div>
+
+    <div class="warning">
+        <h3>Notas Importantes:</h3>
+        <ul>
+            <li>Todos los archivos deben seguir estrictamente el formato de nomenclatura establecido</li>
+            <li>Las fotos de hitos deben ser claras y legibles</li>
+            <li>Para actividades no contempladas, consultar con el supervisor antes de enviar la información</li>
+            <li>Mantener una copia de respaldo de todos los archivos enviados</li>
+        </ul>
+    </div>
+</body>
+</html>
